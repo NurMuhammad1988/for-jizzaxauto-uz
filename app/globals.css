@@ -1,6 +1,8 @@
 
 /* @apply qilib huddi cssni o'zidagi :rootga o'hshatib tailwind classlar yozib qo'yilgan loyihada qaysi clas qayta qayta kerak bo'lsa shu joydan @applyni ichidagi clasni nomini yozib chaqirsa bo'ldi shunda react js loyiha ichida classni qayta qayta yozib yurish shart emas  */
 
+/* bu file appdagi layout.tsx da import qilingan yani html bilan render qilingan papkaga */
+
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
