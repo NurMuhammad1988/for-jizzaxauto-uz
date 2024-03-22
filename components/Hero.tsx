@@ -26,10 +26,15 @@ const Hero = () => {
             </div>
             <div className="hero__image-container ">
                 <div className="hero__image">
-                    <Image src="/hero.png" alt="hero" fill className="object-contain " />
+                    <Image
+                        src="/hero.png"
+                        alt="hero"
+                        fill
+                        className="object-contain "
+                    />
                     {/* rasm nuqtasiz faqat slashni o'zi bilan chaqirilar ekan sababi import image fromnext image orqali hamma rasimlar render qilib chaqirilib qo'yilgan bo'lishi mumkun   */}
-                    <div className="hero__image-overlay"/>
                 </div>
+                <div className="hero__image-overlay" />
             </div>
         </div>
     );
