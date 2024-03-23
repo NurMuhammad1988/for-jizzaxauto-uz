@@ -40,6 +40,13 @@ export const manufacturers = [
     "Toyota",
     "Volkswagen",
     "Volvo",
+    "Nexia 2",
+    "Nexia 3",
+    "Captiva 2",
+    "Gentra",
+    "Damas",
+    "Cobalt",
+
 ];
 
 export const yearsOfProduction = [
