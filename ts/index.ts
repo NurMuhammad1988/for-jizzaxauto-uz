@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
     title: string;
@@ -22,7 +22,7 @@ export interface CarProps {
     fuel_type: string;
     highway_mpg: number;
     make: string;
-    model:string;
+    model: string;
     transmission: string;
-    year:number;
+    year: number;
 }
