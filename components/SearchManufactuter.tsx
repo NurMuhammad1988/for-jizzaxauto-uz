@@ -3,9 +3,9 @@
 import { useState, Fragment } from "react";
 import Image from "next/image";
 import { Combobox, Transition } from "@headlessui/react";
-// combobox va transiton headlessUI saytidan npm i @headlessui/react shunday yuklab olib kelindi va pastga chaqirildi bu ui yani user interface bunda tayyor react tailwind componentlar bo'lar ekan yuqiridagidan yuklab import qilib ishlatsa bo'lar ekan
-import { manufacturers } from "@/constants"; //yani qidiruv yabi quey so'rovi jo'natilganda shu o'zgaruvchi ichidagi malumotlardan qidaradi
-import { SearchManufactuterProps } from "@/ts";
+// combobox va transiton headlessUI saytidan npm i @headlessui/react shunday yuklab olib kelindi va pastga chaqirildi bu ui yani user interface bunda tayyor react tailwind componentlar bo'lar ekan yuqoridagidan yuklab import qilib ishlatsa bo'lar ekan
+import { manufacturers } from "@/constants"; //yani qidiruv yani quey so'rovi jo'natilganda shu o'zgaruvchi ichidagi malumotlardan qidaradi qizig'i constantsni ichida index.tsni ichida turipti bu manufactuters nextda papkani ichidagi filelardan topib kelib lekin import qilishda  asosiy papkani adresi yozilarkan buham import export qilishda qulay ekan
+import { SearchManufactuterProps } from "@/ts";//ts papkani ichidagi ichidagi index.ts fileda yozilib chaqirildi bu props
 
 const SearchManufactuter = ({
     manufacturer,
@@ -25,7 +25,7 @@ const SearchManufactuter = ({
 
     return (
         <div className="search-manufacturer">
-            <Combobox>
+            <Combobox value={manufacturer} onChange={setManufacturer}>
                 <div className="relative w-full ">
                     <Combobox.Button className="absolute top-[14px]">
                         <Image
