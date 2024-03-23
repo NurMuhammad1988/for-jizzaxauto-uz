@@ -3,7 +3,7 @@
 import { useState, Fragment } from "react";
 import Image from "next/image";
 import { Combobox, Transition } from "@headlessui/react";
-// combobox va transiton headlessUI saytidan npm i @headlessui/react shunday yuklab olib kelindi va pastga chaqirildi bu ui yani user interface bunda tayyor react tailwind componentlar bo'lar ekan yuqoridagidan yuklab import qilib ishlatsa bo'lar ekan
+// combobox va transiton headlessUI saytidan npm i @headlessui/react shunday yuklab olib kelindi va pastga chaqirildi bu ui yani user interface bunda tayyor react tailwind componentlar bo'lar ekan yuqoridagidan yuklab import qilib ishlatsa bo'lar ekan qpidasi hamma narsa combobox tagini ichida bo'lishi kerak huddi react routerda hamma narsa linksni yoki linkni ichida bo'lgani kabi
 import { manufacturers } from "@/constants"; //yani qidiruv yani quey so'rovi jo'natilganda shu o'zgaruvchi ichidagi malumotlardan qidaradi qizig'i constantsni ichida index.tsni ichida turipti bu manufactuters nextda papkani ichidagi filelardan topib kelib lekin import qilishda  asosiy papkani adresi yozilarkan buham import export qilishda qulay ekan
 import { SearchManufactuterProps } from "@/ts";//ts papkani ichidagi ichidagi index.ts fileda yozilib chaqirildi bu props
 
@@ -22,7 +22,7 @@ const SearchManufactuter = ({
                       .replace(/\s+/g, "")
                       .includes(query.toLowerCase().replace(/\s+/g, ""))
               );
-
+// Searxh siystems
     return (
         <div className="search-manufacturer">
             <Combobox value={manufacturer} onChange={setManufacturer}>

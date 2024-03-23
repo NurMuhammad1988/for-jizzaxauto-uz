@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { CustomFilter, Hero, SearchBar } from "@/components";
+import { CustomFilter, Hero, SearchBar, CarCard } from "@/components";
 import { fetchCars } from "@/utils";
-import { log } from "console";
+
 //nextda tsda shunday import export qilinarkan @ bu degani shu asosiy failni ichidan degani yani har bitta papkani alohida yozib o'tirish shart emas ekan bu import,export qilishda qulay degani
 
 //nextda tsda shunday import export qilinarkan yani dasturchi component papkani o'zi ochib ichiga hamma componentni yozadi bu huddi reactni o'zidagi asosiy app.jsx papkaga o'hshaydi lekin sintaksiz sal boshqacha
@@ -10,9 +10,8 @@ export default async function Home() {
     const allCars = await fetchCars();
     const isDataEmpty =
         !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-
-    console.log(allCars);
-
+    // bu repid apidan kelgan databazalarni chaqirish kodi
+    //search siystem
     return (
         <main className="overflow-hidden">
             <Hero />
@@ -30,7 +29,13 @@ export default async function Home() {
                 </div>
 
                 {!isDataEmpty ? (
-                    <section>WE HAVE CARS</section>
+                    <section>
+                        <div className="home__cars-wrapper">
+                            {allCars?.map((car) => (
+                                <CarCard car={car} />
+                            ))}
+                        </div>
+                    </section>
                 ) : (
                     <div className="home__error-container">
                         <h2 className="text-black text-xl font-bold">

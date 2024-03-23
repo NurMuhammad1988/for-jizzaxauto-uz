@@ -57,3 +57,18 @@ export async function fetchCars() {
     return result;
 }
 // "X-RapidAPI-Key": "KJwZZIJSFimshuivMSVGaiYzkRomp15f2vKjsnK4bKzuUzVLzA",//bu Adrianni api keyi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BU KEYHAM ISHLADI AGAR BIR OYDAN KEYIN O'ZIMNI KEYIM ISHLAMAY QOLSA ADRIANNI KEYINI ISHLATSAMHAM BO'LISHI MUMKUN CHUNKI ADRIANNI KEYIHAM ISHLADI BUGUN SANA 2024 YIL 24 CHI MART !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+export const calculateCarRent = (city_mpg: number, year: number) => {
+    const basePricePerDay = 50; // Dollarda kuniga asosiy ijara narxi
+    const mileageFactor = 0.1; // Har bir milga qo'shimcha stavka
+    const ageFactor = 0.05; // Avtomobil yoshi uchun qo'shimcha stavka
+  
+    // Kilometr va yoshga qarab qo'shimcha tarifni hisoblang
+    const mileageRate = city_mpg * mileageFactor;
+    const ageRate = (new Date().getFullYear() - year) * ageFactor;
+  
+    // Bir kunlik ijaraning umumiy stavkasini hisoblash
+    const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
+  
+    return rentalRatePerDay.toFixed(0);
+  };
