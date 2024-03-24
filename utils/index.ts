@@ -39,6 +39,11 @@
 // }
 // //////////////////////////////////////////
 
+
+
+
+
+
 export async function fetchCars() {
     const headers = {
         "X-RapidAPI-Key": "b24dd1ad3bmsh959c49b96b3e0dbp1024f2jsn34dde71fcae3", //bu o'zimni keyim
@@ -47,7 +52,7 @@ export async function fetchCars() {
     };
 
     const response = await fetch(
-        "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla",
+        "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera",
 
         {
             headers: headers,
@@ -58,6 +63,24 @@ export async function fetchCars() {
     return result;
 }
 // "X-RapidAPI-Key": "KJwZZIJSFimshuivMSVGaiYzkRomp15f2vKjsnK4bKzuUzVLzA",//bu Adrianni api keyi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BU KEYHAM ISHLADI AGAR BIR OYDAN KEYIN O'ZIMNI KEYIM ISHLAMAY QOLSA ADRIANNI KEYINI ISHLATSAMHAM BO'LISHI MUMKUN CHUNKI ADRIANNI KEYIHAM ISHLADI BUGUN SANA 2024 YIL 24 CHI MART !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
     // apidan kelayotgan malumotlarga qo'shildi
