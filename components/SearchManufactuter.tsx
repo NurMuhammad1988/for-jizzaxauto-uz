@@ -22,7 +22,7 @@ const SearchManufactuter = ({
                       .replace(/\s+/g, "")
                       .includes(query.toLowerCase().replace(/\s+/g, ""))
               );
-// Searxh siystems
+// Search siystems
     return (
         <div className="search-manufacturer">
             <Combobox value={manufacturer} onChange={setManufacturer}>

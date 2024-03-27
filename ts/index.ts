@@ -28,4 +28,6 @@ export interface CarProps {
     model: string;
     transmission: string;
     year: number;
+     // yani serverdan kelayotgan malumotlar har bir mashinada har hil ekan yani serverda har bir moshin uchun alohida malumotlar yozib qo'yilgan
+
 }
