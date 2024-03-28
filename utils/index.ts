@@ -1,6 +1,8 @@
-import { CarProps } from "@/ts";
+import { CarProps, FilterProps } from "@/ts";
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
+    const { manufacturer, year, model, limit, fuel } = filters;
+
     const headers = {
         "X-RapidAPI-Key": "b24dd1ad3bmsh959c49b96b3e0dbp1024f2jsn34dde71fcae3", //bu o'zimni keyim
         // apidan kelayotgan malumotlar
@@ -8,13 +10,11 @@ export async function fetchCars() {
     };
 
     const response = await fetch(
-        "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3",
-        // yane serverdan kelayotgan malumotlar har bir mashinada har hil ekan yani serverda har bir moshin uchun alohida malumotlar yozib qo'yilgan
-
+        `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
         {
             headers: headers,
         }
-    );
+    ); // yani serverdan kelayotgan malumotlar har bir mashinada har hil ekan yani serverda har bir moshin uchun alohida malumotlar yozib qo'yilgan
 
     const result = await response.json();
     return result;
@@ -37,26 +37,20 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     return rentalRatePerDay.toFixed(0);
 };
 
-
-
 export const genereteCarImageUrl = (car: CarProps, angle?: string) => {
-
     const url = new URL("https://cdn.imagin.studio/getimage");
-    
-    const { make,year, model  } = car;
-  
-    // url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');//bu radnoy key pastdagi esa 
-    url.searchParams.append('customer','hrjavascript-mastery');
 
-    url.searchParams.append('make', make);
-    url.searchParams.append('modelFamily', model.split(" ")[0]);
-    url.searchParams.append('zoomType', 'fullscreen');
-    url.searchParams.append('modelYear', `${year}`);
+    const { make, year, model } = car;
+
+    // url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');//bu radnoy key pastdagi esa
+    url.searchParams.append("customer", "hrjavascript-mastery");
+
+    url.searchParams.append("make", make);
+    url.searchParams.append("modelFamily", model.split(" ")[0]);
+    url.searchParams.append("zoomType", "fullscreen");
+    url.searchParams.append("modelYear", `${year}`);
     // url.searchParams.append('zoomLevel', zoomLevel);
-    url.searchParams.append('angle', `${angle}`);
-  
+    url.searchParams.append("angle", `${angle}`);
+
     return `${url}`;
-
 };
-
-// 2:05:06 chi minutda qoldi shu joyida url manzillarini yozishiga etiborli bo'l            
