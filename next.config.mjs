@@ -2,6 +2,8 @@
 const nextConfig = {
     images:{
         domains:["cdn.imagin.studio"]
+        // domains:["images.remotePatterns"]
+
     }
 
 };
