@@ -5,9 +5,19 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Listbox, Transition } from "@headlessui/react";
 import { CustomFilterProps } from "@/ts";
+import { type } from "os";
 
 const CustomFilter = ({ title, options }: CustomFilterProps) => {
+
+    const router = useRouter()
+
     const [selected, setSelected] = useState(options[0]);
+
+    const handleUpdateParams = (type:string, value:string) =>{
+        const newPathName = '';
+
+        router.push(newPathName)
+    }
 
     return (
         <div className="w-fit">
@@ -37,16 +47,24 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
                                 <Listbox.Option
                                     key={option.title}
                                     value={option}
-                                    className={ ({active}) =>`relative cursor-default select-none py-2 px-4 ${
-                                        active
-                                            ? "bg-primary-blue text-white"
-                                            : "text-gray-900"
-                                    }`}
+                                    className={({ active }) =>
+                                        `relative cursor-default select-none py-2 px-4 ${
+                                            active
+                                                ? "bg-primary-blue text-white"
+                                                : "text-gray-900"
+                                        }`
+                                    }
                                 >
-
-                                         
                                     {({ selected }) => (
-                                        <span>{option.title}</span>
+                                        <span
+                                            className={`block truncate ${
+                                                selected
+                                                    ? "font-medium"
+                                                    : "font-normal"
+                                            }`}
+                                        >
+                                            {option.title}
+                                        </span>
                                     )}
                                 </Listbox.Option>
                             ))}
@@ -59,5 +77,3 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
 };
 
 export default CustomFilter;
-
-2:44:09 chi minutda qoldi 

@@ -68,7 +68,10 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg ">
                                                 {/* shu rasim kopiya qilib kelindi buni o'rniga boshqa moshin rasmini qo'yib loyihani realroq qilsa bo'ladi */}
                                                 <Image
-                                                    src={genereteCarImageUrl(car, "29")}
+                                                    src={genereteCarImageUrl(
+                                                        car,
+                                                        "29"
+                                                    )}
                                                     alt="car model"
                                                     fill
                                                     priority
@@ -79,7 +82,10 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg ">
                                                 {/* shu rasim kopiya qilib kelindi buni o'rniga boshqa moshin rasmini qo'yib loyihani realroq qilsa bo'ladi */}
                                                 <Image
-                                                    src={genereteCarImageUrl(car, "33")}
+                                                    src={genereteCarImageUrl(
+                                                        car,
+                                                        "33"
+                                                    )}
                                                     alt="car model"
                                                     fill
                                                     priority
@@ -90,7 +96,10 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg ">
                                                 {/* shu rasim kopiya qilib kelindi buni o'rniga boshqa moshin rasmini qo'yib loyihani realroq qilsa bo'ladi */}
                                                 <Image
-                                                    src={genereteCarImageUrl(car,"13")}
+                                                    src={genereteCarImageUrl(
+                                                        car,
+                                                        "13"
+                                                    )}
                                                     alt="car model"
                                                     fill
                                                     priority
@@ -111,8 +120,14 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                                         className="flex justify-between gap-5 w-full text-right "
                                                         key={key}
                                                     >
-                                                        <h4 className="text-gray capitalize">{key.split("_").join(" ")}</h4>
-                                                        <p className="text-black-100 font-semibold">{value}</p>
+                                                        <h4 className="text-gray capitalize">
+                                                            {key
+                                                                .split("_")
+                                                                .join(" ")}
+                                                        </h4>
+                                                        <p className="text-black-100 font-semibold">
+                                                            {value}
+                                                        </p>
                                                         {/*    {car.make} {car.model} qilinib object entries qilinib va carda key va valuesi map qilinib h4 va p taglariga chaqirildi   */}
                                                     </div>
                                                 )

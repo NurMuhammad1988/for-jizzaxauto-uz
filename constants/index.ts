@@ -81,7 +81,7 @@ export const footerLinks = [
     {
         title: "About",
         links: [
-          // { title: "How it works", url: "https://kun.uz" },linklarni qo'yib chiq kerakli joylarga!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          // { title: "How it works", url: "https://kun.uz" },linklarni qo'yib chiq kerakli joylarga yani bu reactda !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             { title: "How it works", url: "/" },
             { title: "Featured", url: "/" },
             { title: "Partnership", url: "/" },
